@@ -1,0 +1,10 @@
+body{
+    background-color: blanchedalmond;
+    text-align: center;
+    padding: 30px;
+}
+
+canvas{
+    border:solid 1px black;
+    background-color: white;
+}
