@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      Form
+    </title>
+    <style>
+      .ex{
+        border-radius: 9px;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: aqua;
+        color: white;
+      }
+    </style>
+    <script>
+    /****************************************************************************/
+    /* Function that performs (asynchronous) query to the web server using AJAX */
+    /****************************************************************************/
+    function requestAJAX() {
+      // Create an object representing the request to the web server - see https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+      var xhr = new XMLHttpRequest();
+
+      // Registration of a (user) function that will process the response received from the server
+      xhr.onreadystatechange = () => response(xhr);
+
+      // Execution of the (asynchronous) query to the web server
+      xhr.open('GET', '/submit', true);
+      xhr.send(null);
+      // Examples of the use of the above methods - see https://www.w3schools.com/xml/ajax_xmlhttprequest_send.asp
+    }
+
+    /*****************************************************************/
+    /* The function that processes the AJAX response from the server */
+    /*****************************************************************/
+    function response(xhr) {
+      try {
+        if (xhr.readyState == XMLHttpRequest.DONE) { // If the response is ready
+          if (xhr.status == 200) {                   // If the request was correct
+
+            // If the data you receive is a plain text or a JSON document, use the following code
+            var received_data = xhr.responseText; // Get a response in the form of a string
+            window.alert(received_data);          // and display it
+
+            // If the data you receive is an HTML or XML document, use the following code
+            // var xmlDoc = xhr.responseXML; //Receive the answer in the form of object 'XmlDocument', which can be accessed using DOM methods - see https://www.w3.org/TR/domcore/
+            // console.log(xmlDoc);
+          }
+          else
+            window.alert('There was a problem with this request.');
+        }
+      }
+      catch (e) {
+        window.alert('Exception caught: ' + e.description);
+      }
+    }
+
+
+    /*********************************************************************************/
+    /* Function that performs (asynchronous) query to the web server using Fetch API */
+    /*********************************************************************************/
+    function requestFetchAPI() {
+      fetch('/submit') // Execution of the (asynchronous) query to the web server - a promise is created
+        .then(function (response) { // if the promise is fulfilled
+          if (!response.ok) {
+            throw Error(response.statusText);
+          }
+          window.alert(response.text()); // show the Promise object
+        })
+        .catch(function (error) { // if the promise is rejected
+          window.alert('Looks like there was a problem: \n', error);
+        });
+    }
+
+    /***********************************************/
+    /* Same as above but using 'async' and 'await' */
+    /***********************************************/
+
+    /*
+        async function requestFetchAPI() {
+          try {
+            response = await fetch('/submit'); // Execution of the (asynchronous) query to the web server - a promise is created
+                                               // If the promise is fulfilled, then 'response' has a value
+            if (!response.ok) {
+              throw Error(response.statusText);
+            }
+          }
+          catch (error) { // if the promise is rejected
+            window.alert('Looks like there was a problem: \n', error);
+          }
+          window.alert(response.text()); //show the Promise object
+        }
+    */
+    </script>
+  </head>
+  <body>
+    <main>
+      <form method="get" action="/submit">
+        <label>Perform a query to the web server with the <strong>GET</strong> method</label> <input type="submit"
+              value="Without using AJAX or Fetch API"> <input type="button"
+              value="Using AJAX"
+              onclick="requestAJAX()"> <input type="button"
+              value="Using Fetch API"
+              onclick="requestFetchAPI()">
+      </form>
+
+      <form>
+        <input type="text" name="name" id="name-input" placeholder="Name" />
+        <input class="ex" type="button" value="AJAX (GET)" onclick="ajaxGet()" />
+        <input class="ex" type="button" value="AJAX (POST)" onclick="ajaxPost()" />
+        <input class="ex" type="button" value="Fetch API (GET)" onclick="fetchApiGet()" />
+        <input class="ex" type="button" value="Fetch API (POST)" onclick="fetchApiPost()" /> 
+      </form>
+
+      <script>
+        const nameInput = document.getElementById("name-input");
+
+        ajaxGet = () => {
+        const req = new XMLHttpRequest();
+        req.onreadystatechange = () => ajaxResponse(req);
+
+        req.open('GET', `submit?name=${encodeURIComponent(nameInput.value)}`, true);
+        req.send(null);
+      };
+
+      ajaxPost = () => {
+        const req = new XMLHttpRequest();
+        req.onreadystatechange = () => responseHandler(req);
+        req.open('POST', `/submit`, true);
+        req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');      
+        req.send(nameInput.value);
+      };
+
+      responseHandler = (req) => {
+        if (req.readyState == 4) {
+          if (req.status == 200) {
+            const response = req.responseText;
+          }
+          else{
+            alert("There was a problem with this task");
+          }
+        }
+      };
+
+      fetchApiGet = async () => {
+        try {
+          const response = await fetch('/submit?name=' + encodeURIComponent(nameInput.value));
+          window.alert(await response.text());
+        } 
+        catch {
+          console.error(`Error occured`);
+        }
+      };
+
+      fetchApiPost = async () => {
+        const req = {
+          method: 'post',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: nameInput.value,
+        };
+
+        try {
+          const response = await fetch('/submit', req);
+          window.alert(await response.text());
+        } 
+        catch {
+          console.error(`Error occured`);
+        }
+      };
+      </script>
+    </main>
+  </body>
+</html>
