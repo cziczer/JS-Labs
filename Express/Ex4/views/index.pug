@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title COVID
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+  body
+    if countries
+      h1 Covid-19 Summary
+        .container
+          table.table
+            thead
+              th(scope="col") Country
+              th(scope="col") #{parameter}
+            tbody
+              each country in countries
+                tr
+                  td #{country.Country}
+                  if parameter == 'NewConfirmed'
+                    td #{country.NewConfirmed}
+                  else if parameter == 'TotalConfirmed'
+                    td #{country.TotalConfirmed}
+                  else if parameter == 'NewDeaths'
+                    td #{country.NewDeaths}
+                  else if parameter == 'TotalDeaths'
+                    td #{country.TotalDeaths}
+                  else if parameter == 'NewRecovered'
+                    td #{country.NewRecovered}
+                  else if parameter == 'TotalRecovered'
+                    td #{country.TotalRecovered}
+    else
+      h1 Cobid-19 ByCountryLive
+      .container
+          table.table
+            thead
+              th(scope="col") Date
+              each country in countriesList
+                th(scope="col") #{country}
+            tbody
+              each confirmed, date in dates
+                tr
+                  td  #{date}
+                    each country in confirmed
+                      td #{country.Cases}
+
+
+
