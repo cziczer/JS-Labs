@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time app</title>
+
+    <style>
+      .time {
+        border: 1px solid black;
+        width: 50%;
+        margin: 10px auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Timezone</h1>
+    <form id="timezone">
+      <input type="text" id="area" placeholder="Area" />
+      <input type="text" id="location" placeholder="Location" />
+      <button type="submit">Get Time</button>
+    </form>
+
+    <div id="times">
+    </div>
+
+
+    <script>
+
+        let timezone = document.getElementById('timezone');
+        let times = document.getElementById('times');
+
+        timezone.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const area = document.getElementById('area').value;
+            const location = document.getElementById('location').value;
+
+            try {
+            setInterval( async () => {
+            
+            const response = await fetch(`http://localhost:5000/${area}/${location}`);
+            const date = await response.json();
+
+            const time = document.createElement('div');
+            time.innerHTML = `
+                <div class="time">
+                <p>Local time: ${new Date().toString()}</p>
+                <p>From API: ${date.datetime}</p>
+                </div>
+                `;
+
+                times.appendChild(time);
+            }, 1000);
+
+            } catch (e) {
+                console.error(e);
+            }
+        });
+
+    </script>
+  </body>
+</html>
