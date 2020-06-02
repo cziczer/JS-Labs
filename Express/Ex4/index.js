@@ -81,7 +81,7 @@ app.get('/byCountryLive/:Date1/:Date2/:Country1/:Country2/:Country3', async(req,
       dates.get(date.Date.toString().substring(5, 10)).push(date);
     }
   ));
-  dates = Object.fromEntries(dates)
+  dates = Object.fromEntries(dates);
     resolve.render('index', {dates, countriesList});
 });
 
