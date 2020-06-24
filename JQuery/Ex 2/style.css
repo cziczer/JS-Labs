@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+  }
+  
+.board {
+    display: flex;
+    justify-content: space-around;
+}
+  
+.board table {
+    border-collapse: collapse;
+}
+  
+.board td {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 30px;
+ }
+  
+.scores {
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.scores td {
+    padding: 10px;
+    border: 3px solid red;
+    font-size: 25px;
+}
+
+.player{
+    color: black;
+    font-weight: 400;
+}

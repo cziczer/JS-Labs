@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <!-- Page title -->
+    <link rel="stylesheet" href="text.css" />
+
+    <title>
+      Replacing and correncting words
+    </title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+      <a class="navbar-brand" href="index.html">Text processing</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#mainmenu"
+        aria-controls="mainmenu"
+        aria-expanded="false"
+        aria-label="Przełącznik nawigacji"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainmenu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="stemming_words.html" class="nav-link">Stemming words</a>
+          </li>
+          <li class="nav-item">
+            <a href="replacing_words.html" class="nav-link"
+              >Replacing words matching regular expressions</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="lemmatizing.html" class="nav-link"
+              >Lemmatizing words with WordNet</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="removing.html" class="nav-link"
+              >Removing repeating characters</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="replacing_synonyms.html" class="nav-link active"
+              >Replacing synonyms</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="replacing_negations.html" class="nav-link"
+              >Replacing negations with antonyms</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <h1>
+          <i class="fab fa-acquisitions-incorporated"></i> Replacing synonyms
+          <i class="fab fa-acquisitions-incorporated"></i>
+        </h1>
+        <p>
+          It is often useful to reduce the vocabulary of a text by replacing
+          words with common synonyms. By compressing the vocabulary without
+          losing meaning, you can save memory in cases such as frequency
+          analysis and text indexing. More details about these topics are
+          available at https://en.wikipedia.org/wiki/Frequency_analysis and
+          https://en.wikipedia.org/wiki/Full_text_search. Vocabulary reduction
+          can also increase the occurrence of significant collocations, which
+          was covered in the Discovering word collocations recipe of Chapter 1,
+          Tokenizing Text and WordNet Basics.
+        </p>
+      </div>
+    </main>
+
+    <footer class="bg-dark">
+      <!-- Tutaj treść stopki / Here the content of the footer -->
+      <a href="mailto:twoj.adres.email">Imię Nazwisko</a>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

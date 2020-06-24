@@ -1,0 +1,32 @@
+body {
+  color: black;
+  text-align: justify;
+}
+
+h1 {
+  text-align: center;
+}
+
+.navbar {
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  border: dashed 1px black;
+  margin-bottom: 15px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card img {
+  border: none;
+}
+
+main {
+  min-height: 700px;
+}

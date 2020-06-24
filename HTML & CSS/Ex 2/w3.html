@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="sheet.css" type="text/css" />
+    <title>
+      Tytuł strony
+    </title>
+  </head>
+  <body>
+    <nav>
+      <!--Tutaj menu nawigacyjne / Here the navigation menu -->
+
+      <ul class="w3-hide-small">
+        <li>
+          <a href="">Uczelnia</a>
+        </li>
+        <li>
+          <a href="">Kierunki</a>
+        </li>
+
+        <li>
+          <a href="">Studenci</a>
+        </li>
+      </ul>
+      <div class="w3-dropdown-click">
+        <button
+          onclick="myFunction()"
+          class="w3-button w3-black w3-hide-medium w3-hide-large"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div id="Demo" class="w3-dropdown-content w3-bar-block w3-border">
+          <a href="#" class="w3-bar-item w3-button">Uczelnia</a>
+          <a href="#" class="w3-bar-item w3-button">Kierunki</a>
+          <a href="#" class="w3-bar-item w3-button">Studenci</a>
+        </div>
+      </div>
+      <div style="clear:both;"></div>
+
+      <script>
+        function myFunction() {
+          var x = document.getElementById("Demo");
+          if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+          } else {
+            x.className = x.className.replace(" w3-show", "");
+          }
+        }
+      </script>
+    </nav>
+
+    <main>
+      <!-- Tutaj treść strony / Here the content of the page-->
+
+      <h1>
+        Wydział IET
+      </h1>
+      <div class="w3-row">
+        <div class="geek w3-container w3-quarter">
+          Imię Nazwisko
+          <h2>Informatyka</h2>
+          <img src="geek.png" alt="" />
+          ansdvjasnbajsrb
+        </div>
+
+        <div class="geek-big w3-container w3-half">
+          Imię Nazwisko
+          <h2>Elektronika</h2>
+          <img src="geek2.png" alt="" />
+          vafklbanbaklfbna
+        </div>
+
+        <div class="geek w3-container w3-quarter">
+          Imię Nazwisko
+          <h2>Telekomunikacja</h2>
+          <img src="geek.png" alt="" />
+          egjakgnasvlasnkn
+        </div>
+        <div style="clear: both;"></div>
+      </div>
+    </main>
+
+    <footer>
+      <!-- Tutaj treść stopki / Here the content of the footer -->
+      <a href="mailto:twoj.adres.email">Imię Nazwisko</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+#id {
+    padding: 5px;
+    width: 50%;
+}
+
+#request {
+    margin-top: 20px;
+    padding: 15px;
+    width: auto;
+    background-color: darkgreen;
+    color: white;
+}
+
+#tab {
+    margin-top: 15px;
+    width: 100%;
+}
+
+hr{
+    background-color: black;
+}

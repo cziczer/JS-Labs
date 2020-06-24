@@ -1,0 +1,56 @@
+body{
+    font-size: 20px;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav{
+    background-color: black;
+    margin-top: 0px;
+}
+
+ul li{
+    margin: 15px;
+    list-style: none;
+    float: left;
+}
+
+main{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    min-height: 700px;
+}
+
+main h1{
+    text-align: left;
+    color: black;
+}
+
+.geek-big{
+    background-color: black;
+    border: 10px solid white;
+    padding: 15px;
+    min-height: 450px;
+}
+
+.geek{
+    background-color: black;
+    border: 10px solid white;
+    padding: 10px;
+    min-height: 350px;
+}
+
+img{
+    width: 80%;
+    height: auto;
+}
+
+footer{
+    background-color: black;
+}
+

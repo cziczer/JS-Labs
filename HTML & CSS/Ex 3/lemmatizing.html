@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+    <!-- Page title -->
+    <link rel="stylesheet" href="text.css">
+
+    <title>
+        Replacing and correncting words
+    </title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+
+        <a class="navbar-brand" href="index.html">Text processing</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"
+            aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainmenu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="stemming_words.html" class="nav-link">Stemming words</a>
+                </li>
+                <li class="nav-item">
+                    <a href="replacing_words.html" class="nav-link">Replacing words matching regular expressions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="lemmatizing.html" class="nav-link active">Lemmatizing words with WordNet</a>
+                </li>
+                <li class="nav-item">
+                    <a href="removing.html" class="nav-link">Removing repeating characters</a>
+                </li>
+                <li class="nav-item">
+                    <a href="replacing_synonyms.html" class="nav-link">Replacing synonyms</a>
+                </li>
+                <li class="nav-item">
+                    <a href="replacing_negations.html" class="nav-link">Replacing negations with antonyms</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <h1>
+                <i class="fas fa-air-freshener"></i> Lemmatizing words with WordNet <i class="fas fa-air-freshener"></i>
+            </h1>
+
+            <div class="conainter">
+                <div>
+                    <p><strong> Lemmatization</strong> is very similar to stemming, but is more akin to synonym replacement.
+                    A lemma is a root word, as opposed to the root stem. So unlike stemming, you are always
+                    left with a valid word that means the same thing. However, the word you end up with can
+                    be completely different. A few examples will explain this.
+                    </p>
+                    <p>
+                    Make sure that you have unzipped the wordnet corpus in nltk_data/corpora/wordnet.
+                    This will allow the WordNetLemmatizer class to access WordNet. You should also be
+                    familiar with the part-of-speech tags covered in the Looking up Synsets for a word in WordNet
+                    recipe of Chapter 1, Tokenizing Text and WordNet Basics.
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6 col-xl-5 offset-xl-1">
+                        <img src="images/lemmatizing/how_do_it.PNG" alt="">
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-5">
+                        <img src="images/lemmatizing/how_works.PNG" alt="">
+                    </div>
+                </div>
+                <div class="col-md-8 offset-md-2">
+                    <img src="images/lemmatizing/combining.PNG" alt="">
+                </div>  
+            </div>
+    </main>
+
+    <footer class="bg-dark">
+        <!-- Tutaj treść stopki / Here the content of the footer -->
+        <a href="mailto:twoj.adres.email">Imię Nazwisko</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

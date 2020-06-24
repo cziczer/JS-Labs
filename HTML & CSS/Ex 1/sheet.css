@@ -1,0 +1,71 @@
+aside  {
+    width: 50%;
+    float: right;
+}
+aside ul{
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+footer {
+   font-size: 20px;
+}
+footer div{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+header {
+}
+main {
+  width: 35%;
+  font-size: 18px;
+}
+nav {
+  display: inline-block;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+nav ul {
+    margin: 20px 0 20px;
+}
+nav li, aside li {
+  font-size: 18px;
+}
+blockquote{
+    margin-left: 0px;
+    padding-bottom: 10px;
+}
+.azure{
+    background-color: #eff;
+    border: 1px black solid;
+    margin: 20px;
+    padding: 0 10px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.aside-title{
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 32px;
+    font-weight: 900;
+}
+.title{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 32px;
+    font-weight: 900;
+}
+main h1{
+    color: red;
+    animation: change_color 10s infinite reverse;
+}
+@keyframes change_color{
+    0% {color : red}
+    50% {color: blue}
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    header h1{ color: red;}
+}
+
+@media screen and (max-width: 768px){
+    header h1 { color: blue}
+}

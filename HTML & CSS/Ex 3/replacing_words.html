@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+    <!-- Page title -->
+    <link rel="stylesheet" href="text.css">
+
+    <title>
+        Replacing and correncting words
+    </title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+
+        <a class="navbar-brand" href="index.html">Text processing</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu"
+            aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainmenu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="stemming_words.html" class="nav-link">Stemming words</a>
+                </li>
+                <li class="nav-item">
+                    <a href="replacing_words.html" class="nav-link active">Replacing words matching regular expressions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="lemmatizing.html" class="nav-link">Lemmatizing words with WordNet</a>
+                </li>
+                <li class="nav-item">
+                    <a href="removing.html" class="nav-link">Removing repeating characters</a>
+                </li>
+                <li class="nav-item">
+                    <a href="replacing_synonyms.html" class="nav-link">Replacing synonyms</a>
+                </li>
+                <li class="nav-item">
+                    <a href="replacing_negations.html" class="nav-link">Replacing negations with antonyms</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <h1>
+            <i class="fas fa-allergies"></i> Replacing words matching regular expressions <i class="fas fa-allergies"></i>
+            </h1>
+
+            <div class="container">
+                <div>
+                    <p>Now, we are going to get into the process of replacing words. If stemming and lemmatization
+                    are a kind of linguistic compression, then word replacement can be thought of as error
+                    correction or text normalization.
+                    In this recipe, we will replace words based on regular expressions, with a focus on expanding
+                    contractions. Remember when we were tokenizing words in Chapter 1, Tokenizing Text and
+                    WordNet Basics, and it was clear that most tokenizers had trouble with contractions? This
+                    recipe aims to fix this by replacing contractions with their expanded forms, for example, by
+                    replacing "can't" with "cannot" or "would've" with "would have".
+                    </p>
+                    <p>
+                    Understanding how this recipe works will require a basic knowledge of regular expressions and
+                    the re module. The key things to know are matching patterns and the re.sub() function.
+                    </p>
+
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <img src="images/replacing/how_do_it.PNG" alt="">
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-5 offset-xl-1">
+                            <img src="images/replacing/how_works.PNG" alt="">
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-5">
+                            <img src="images/replacing/replacement.PNG" alt="">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+    </main>
+
+    <footer class="bg-dark">
+        <!-- Tutaj treść stopki / Here the content of the footer -->
+        <a href="mailto:twoj.adres.email">Imię Nazwisko</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
